@@ -4,11 +4,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "ddd-base",
+    name: "swift-ddd-base",
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "ddd-base",
+            name: "swift-ddd-base",
             targets: ["Common"]),
     ],
     dependencies: [
