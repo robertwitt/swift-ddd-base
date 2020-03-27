@@ -1,7 +1,7 @@
 import XCTest
 
-import ddd_baseTests
+import Common
 
 var tests = [XCTestCaseEntry]()
-tests += ddd_baseTests.allTests()
+tests += Common.allTests()
 XCTMain(tests)
