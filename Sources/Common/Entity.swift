@@ -1,5 +1,5 @@
 //
-//  DomainEntity.swift
+//  Entity.swift
 //  
 //
 //  Created by Witt, Robert on 27.03.20.
@@ -10,16 +10,16 @@ import Foundation
 /**
  An abstract domain entity. This class is supposed to be sub classed into concrete entities.
  */
-class DomainEntity: Hashable {
+class Entity: Hashable {
     
     /// Unique identifier of this entity
-    let id: DomainEntityId
+    let id: EntityId
     
     /**
      Initializer for an entity
      - Parameter id: the identifier of this entity
      */
-    public init(id: DomainEntityId) {
+    public init(id: EntityId) {
         self.id = id
     }
     
@@ -27,11 +27,11 @@ class DomainEntity: Hashable {
         hasher.combine(id)
     }
     
-    static func == (lhs: DomainEntity, rhs: DomainEntity) -> Bool {
+    static func == (lhs: Entity, rhs: Entity) -> Bool {
         return lhs.id == rhs.id
     }
     
 }
 
 /// ID of a domain entity
-typealias DomainEntityId = String
+typealias EntityId = String

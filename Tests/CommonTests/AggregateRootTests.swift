@@ -1,5 +1,5 @@
 //
-//  DomainRootEntityTests.swift
+//  AggregateRootTests.swift
 //  
 //
 //  Created by Witt, Robert on 27.03.20.
@@ -8,11 +8,11 @@
 import XCTest
 @testable import Common
 
-final class DomainRootEntityTests: XCTestCase {
+final class AggregateRootTests: XCTestCase {
     
     private class CustomerEvent: DomainEvent {}
     
-    private class Customer: DomainRootEntity {}
+    private class Customer: AggregateRoot {}
     
     static var allTests = [
         ("testAddDomainEvent", testAddDomainEvent)

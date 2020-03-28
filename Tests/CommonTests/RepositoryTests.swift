@@ -1,5 +1,5 @@
 //
-//  DomainRepositoryTests.swift
+//  RepositoryTests.swift
 //  
 //
 //  Created by Witt, Robert on 27.03.20.
@@ -8,15 +8,15 @@
 import XCTest
 @testable import Common
 
-final class DomainRepositoryTests: XCTestCase {
+final class RepositoryTests: XCTestCase {
 
-    private class Customer: DomainRootEntity {}
+    private class Customer: AggregateRoot {}
     
-    private class SampleRepository: DomainRepository {
+    private class SampleRepository: Repository {
         typealias T = Customer
         private var entities = ["": Customer(id: "")]
         
-        func get(byId id: DomainEntityId) -> Customer? {
+        func get(byId id: EntityId) -> Customer? {
             return entities[id] ?? Customer(id: id)
         }
         

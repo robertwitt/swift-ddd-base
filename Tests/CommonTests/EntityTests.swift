@@ -1,5 +1,5 @@
 //
-//  DomainEntityTests.swift
+//  EntityTests.swift
 //
 //
 //  Created by Witt, Robert on 27.03.20.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import Common
 
-final class DomainEntityTests: XCTestCase {
+final class EntityTests: XCTestCase {
     
-    private class Customer: DomainEntity {
+    private class Customer: Entity {
         var name: String?
         
         func sayHello() -> String {

@@ -1,5 +1,5 @@
 //
-//  DomainRootEntity.swift
+//  AggregateRoot.swift
 //  
 //
 //  Created by Witt, Robert on 27.03.20.
@@ -8,19 +8,19 @@
 import Foundation
 
 /**
- The root entity in a domain aggregate.
+ An root entity in a domain aggregate. This class is supposed to be sub classed into concrete entities.
  */
-class DomainRootEntity: DomainEntity {
+class AggregateRoot: Entity {
     
     /// List of domain events
     private(set) var domainEvents = [DomainEvent]()
     
     /**
-     Add a domain event to this root entity
+     Add a domain event to this root
      - Parameter event: a domain event
      */
-    func addDomainEvent(_ event: DomainEvent) {
-        domainEvents.append(event)
+    func addDomainEvent(_ domainEvent: DomainEvent) {
+        domainEvents.append(domainEvent)
     }
     
     /**

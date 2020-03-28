@@ -1,5 +1,5 @@
 //
-//  DomainValueObjectTests.swift
+//  ValueObjectTests.swift
 //  
 //
 //  Created by Witt, Robert on 27.03.20.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import Common
 
-final class DomainValueObjectTests: XCTestCase {
+final class ValueObjectTests: XCTestCase {
     
-    private struct Currency: DomainValueObject {
+    private struct Currency: ValueObject {
         let code: String
     
         func hash(into hasher: inout Hasher) {
