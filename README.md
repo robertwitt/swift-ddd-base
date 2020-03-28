@@ -1,3 +1,10 @@
-# ddd-base
+# Common Artefacts for Domain Driven Design in Swift
 
-A description of this package.
+This package contains the common artefacts in Domain Driven Design written in Swift:
+- Entity
+- Aggregate root
+- Value object
+- Domain event and event handler
+- Repository
+
+These classes and protocols are supposed to be subclasses/implemented in concrete Swift projects.
