@@ -8,30 +8,20 @@
 import Foundation
 
 /**
- An abstract domain entity. This class is supposed to be sub classed into concrete entities.
+ An abstract domain entity. This protocol is supposed to be sub classed into concrete entities.
  */
-class Entity: Hashable {
-    
-    /// Unique identifier of this entity
-    let id: EntityId
-    
+@available(OSX 10.15, *)
+protocol Entity: Hashable, Identifiable {
     /**
      Initializer for an entity
      - Parameter id: the identifier of this entity
      */
-    public init(id: EntityId) {
-        self.id = id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: Entity, rhs: Entity) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
+    init(id: ID)
 }
 
-/// ID of a domain entity
-typealias EntityId = String
+@available(OSX 10.15, *)
+extension Entity {
+    func hash(into hasher: inout Hasher) {
+        id.hash(into: &hasher)
+    }
+}

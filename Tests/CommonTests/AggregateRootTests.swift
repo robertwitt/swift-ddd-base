@@ -8,11 +8,8 @@
 import XCTest
 @testable import Common
 
+@available(OSX 10.15, *)
 final class AggregateRootTests: XCTestCase {
-    
-    private class CustomerEvent: DomainEvent {}
-    
-    private class Customer: AggregateRoot {}
     
     static var allTests = [
         ("testAddDomainEvent", testAddDomainEvent)

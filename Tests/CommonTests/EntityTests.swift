@@ -8,15 +8,8 @@
 import XCTest
 @testable import Common
 
+@available(OSX 10.15, *)
 final class EntityTests: XCTestCase {
-    
-    private class Customer: Entity {
-        var name: String?
-        
-        func sayHello() -> String {
-            return "Hi, my name is \(name ?? id)"
-        }
-    }
 
     static var allTests = [
         ("testEntityId", testEntityId),
@@ -25,26 +18,26 @@ final class EntityTests: XCTestCase {
     ]
     
     func testEntityId() {
-        let customer = Customer(id: "4711")
-        XCTAssertEqual(customer.id, "4711")
+        let person = Person(id: "4711")
+        XCTAssertEqual(person.id, "4711")
     }
     
     func testEntityAttributes() {
-        var customer = Customer(id: "4711")
-        customer.name = "Tom"
-        XCTAssertEqual(customer.id, "4711")
-        XCTAssertEqual(customer.name, "Tom")
-        XCTAssertEqual(customer.sayHello(), "Hi, my name is Tom")
+        var person = Person(id: "4711")
+        person.name = "Tom"
+        XCTAssertEqual(person.id, "4711")
+        XCTAssertEqual(person.name, "Tom")
+        XCTAssertEqual(person.sayHello(), "Hi, my name is Tom")
         
-        customer = Customer(id: "4711")
-        XCTAssertEqual(customer.id, "4711")
-        XCTAssertEqual(customer.sayHello(), "Hi, my name is 4711")
+        person = Person(id: "4711")
+        XCTAssertEqual(person.id, "4711")
+        XCTAssertEqual(person.sayHello(), "Hi, my name is 4711")
     }
     
     func testEquals() {
-        let customer = Customer(id: "4711")
-        XCTAssertEqual(customer, Customer(id: "4711"))
-        XCTAssertNotEqual(customer, Customer(id: "0815"))
+        let person = Person(id: "4711")
+        XCTAssertEqual(person, Person(id: "4711"))
+        XCTAssertNotEqual(person, Person(id: "0815"))
     }
     
 }

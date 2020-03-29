@@ -10,18 +10,6 @@ import XCTest
 
 final class ValueObjectTests: XCTestCase {
     
-    private struct Currency: ValueObject {
-        let code: String
-    
-        func hash(into hasher: inout Hasher) {
-            hasher.combine(code)
-        }
-        
-        static func == (lhs: Currency, rhs: Currency) -> Bool {
-            return lhs.code == rhs.code
-        }
-    }
-    
     static var allTests = [
         ("testEquals", testEquals),
     ]

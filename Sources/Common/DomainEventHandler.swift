@@ -12,14 +12,12 @@ import Foundation
  */
 protocol DomainEventHandler {
     
-    associatedtype T
+    associatedtype E: DomainEvent
     
     /**
      Handle a single domain event
      - Parameter domainEvent: a domain event
      */
-    func handle(_ domainEvent: T)
+    func handle(_ domainEvent: E)
     
 }
-
-extension DomainEventHandler where T == DomainEvent {}

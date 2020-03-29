@@ -8,26 +8,23 @@
 import Foundation
 
 /**
- An root entity in a domain aggregate. This class is supposed to be sub classed into concrete entities.
+ An root entity in a domain aggregate. This protocol is supposed to be sub classed into concrete entities.
  */
-class AggregateRoot: Entity {
+@available(OSX 10.15, *)
+protocol AggregateRoot: Entity {
     
     /// List of domain events
-    private(set) var domainEvents = [DomainEvent]()
+    var domainEvents: [DomainEvent] { get }
     
     /**
      Add a domain event to this root
      - Parameter event: a domain event
      */
-    func addDomainEvent(_ domainEvent: DomainEvent) {
-        domainEvents.append(domainEvent)
-    }
+    func addDomainEvent(_ domainEvent: DomainEvent)
     
     /**
      Clear the list of domain events
      */
-    func clearDomainEvents() {
-        domainEvents.removeAll()
-    }
+    func clearDomainEvents()
     
 }
