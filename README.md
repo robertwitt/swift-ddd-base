@@ -8,3 +8,7 @@ This package contains the common artefacts in Domain Driven Design written in Sw
 - Repository
 
 These classes and protocols are supposed to be subclasses/implemented in concrete Swift projects.
+
+Additionally, the Shared Kernel defines some common domain objects:
+- Currency
+- Money
