@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import Common
+@testable import DDDCommon
 
 @available(OSX 10.15, *)
 class Person: Entity {

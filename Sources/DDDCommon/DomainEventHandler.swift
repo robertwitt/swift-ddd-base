@@ -10,7 +10,7 @@ import Foundation
 /**
  Handler of domain events of a specific sub type of `DomainEvent`
  */
-protocol DomainEventHandler {
+public protocol DomainEventHandler {
     
     associatedtype E: DomainEvent
     

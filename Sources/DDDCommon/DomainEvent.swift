@@ -8,4 +8,4 @@
 /**
  Marker protocol for domain events
  */
-protocol DomainEvent {}
+public protocol DomainEvent {}

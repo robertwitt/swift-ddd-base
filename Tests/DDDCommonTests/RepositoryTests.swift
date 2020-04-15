@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Common
+@testable import DDDCommon
 
 @available(OSX 10.15, *)
 final class RepositoryTests: XCTestCase {

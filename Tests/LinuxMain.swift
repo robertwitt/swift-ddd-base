@@ -1,6 +1,7 @@
 import XCTest
 
-import Common
+import DDDCommon
+import DDDSharedKernel
 
 var tests = [XCTestCaseEntry]()
 tests += Common.allTests()

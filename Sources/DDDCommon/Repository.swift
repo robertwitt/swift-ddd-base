@@ -11,7 +11,7 @@ import Foundation
  Repository to manage access to aggregate roots
  */
 @available(OSX 10.15, *)
-protocol Repository {
+public protocol Repository {
     
     associatedtype R: AggregateRoot
     

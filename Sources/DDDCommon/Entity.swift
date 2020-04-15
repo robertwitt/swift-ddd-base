@@ -11,7 +11,7 @@ import Foundation
  An abstract domain entity. This protocol is supposed to be sub classed into concrete entities.
  */
 @available(OSX 10.15, *)
-protocol Entity: Hashable, Identifiable {
+public protocol Entity: Hashable, Identifiable {
     /**
      Initializer for an entity
      - Parameter id: the identifier of this entity
@@ -20,7 +20,7 @@ protocol Entity: Hashable, Identifiable {
 }
 
 @available(OSX 10.15, *)
-extension Entity {
+public extension Entity {
     func hash(into hasher: inout Hasher) {
         id.hash(into: &hasher)
     }

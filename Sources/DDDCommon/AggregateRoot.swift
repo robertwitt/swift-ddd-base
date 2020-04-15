@@ -11,7 +11,7 @@ import Foundation
  An root entity in a domain aggregate. This protocol is supposed to be sub classed into concrete entities.
  */
 @available(OSX 10.15, *)
-protocol AggregateRoot: Entity {
+public protocol AggregateRoot: Entity {
     
     /// List of domain events
     var domainEvents: [DomainEvent] { get }

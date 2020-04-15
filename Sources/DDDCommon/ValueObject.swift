@@ -10,4 +10,4 @@ import Foundation
 /**
  Marker protocol of a value object
  */
-protocol ValueObject: Hashable {}
+public protocol ValueObject: Hashable {}

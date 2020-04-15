@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SharedKernel
+@testable import DDDSharedKernel
 
 final class CurrencyTests: XCTestCase {
     

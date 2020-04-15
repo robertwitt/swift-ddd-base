@@ -6,44 +6,44 @@
 //
 
 import Foundation
-@testable import Common
+import DDDCommon
 
-struct Money: ValueObject, Comparable {
+public struct Money: ValueObject, Comparable {
     
-    let amount: Double
-    let currency: Currency
+    public let amount: Double
+    public let currency: Currency
     
-    init(_ amount: Double, currency: Currency) {
+    public init(_ amount: Double, currency: Currency) {
         self.amount = amount
         self.currency = currency
     }
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(amount)
         hasher.combine(currency)
     }
     
-    static func == (lhs: Money, rhs: Money) -> Bool {
+    public static func == (lhs: Money, rhs: Money) -> Bool {
         return lhs.amount == rhs.amount && lhs.currency == rhs.currency
     }
     
-    static func < (lhs: Money, rhs: Money) -> Bool {
+    public static func < (lhs: Money, rhs: Money) -> Bool {
         return lhs.amount < rhs.amount && lhs.currency == rhs.currency
     }
     
-    static func <= (lhs: Money, rhs: Money) -> Bool {
+    public static func <= (lhs: Money, rhs: Money) -> Bool {
         return lhs.amount <= rhs.amount && lhs.currency == rhs.currency
     }
     
-    static func > (lhs: Money, rhs: Money) -> Bool {
+    public static func > (lhs: Money, rhs: Money) -> Bool {
         return lhs.amount > rhs.amount && lhs.currency == rhs.currency
     }
     
-    static func >= (lhs: Money, rhs: Money) -> Bool {
+    public static func >= (lhs: Money, rhs: Money) -> Bool {
         return lhs.amount >= rhs.amount && lhs.currency == rhs.currency
     }
     
-    static func + (lhs: Money, rhs: Money) throws -> Money {
+    public static func + (lhs: Money, rhs: Money) throws -> Money {
         guard lhs.currency == rhs.currency else {
             throw NSError(domain: SharedKernelErrorDomain,
                           code: SharedKernelErrorCodeUnmatchingCurrencies,
@@ -52,7 +52,7 @@ struct Money: ValueObject, Comparable {
         return Money(lhs.amount + rhs.amount, currency: lhs.currency)
     }
     
-    static func - (lhs: Money, rhs: Money) throws -> Money {
+    public static func - (lhs: Money, rhs: Money) throws -> Money {
         guard lhs.currency == rhs.currency else {
             throw NSError(domain: SharedKernelErrorDomain,
                           code: SharedKernelErrorCodeUnmatchingCurrencies,
@@ -61,15 +61,15 @@ struct Money: ValueObject, Comparable {
         return Money(lhs.amount - rhs.amount, currency: lhs.currency)
     }
     
-    static func * (money: Money, multiplier: Double) -> Money {
+    public static func * (money: Money, multiplier: Double) -> Money {
         return Money(money.amount * multiplier, currency: money.currency)
     }
     
-    func canAllocate(amount: Double) -> Bool {
+    public func canAllocate(amount: Double) -> Bool {
         return self.amount >= amount
     }
     
-    func allocate(amount: Double) throws -> Money {
+    public func allocate(amount: Double) throws -> Money {
         guard canAllocate(amount: amount) else {
             throw NSError(domain: SharedKernelErrorDomain,
                           code: SharedKernelErrorCodeCannotAllocate,
