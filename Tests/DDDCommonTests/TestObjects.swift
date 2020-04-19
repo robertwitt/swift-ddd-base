@@ -71,7 +71,7 @@ class CustomerRepository: Repository {
     
     private var entities = ["": Customer(id: "")]
     
-    func get(byId id: String) -> Customer? {
+    func get(byID id: String) -> Customer? {
         return entities[id] ?? Customer(id: id)
     }
     

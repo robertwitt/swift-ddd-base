@@ -17,10 +17,10 @@ public protocol Repository {
     
     /**
      Get an aggregate root by its ID
-     - Parameter byId: ID of a root entity
+     - Parameter byID: ID of a root entity
      - Returns: aggregate root or `nil` if not found
      */
-    func get(byId id: R.ID) -> R?
+    func get(byID id: R.ID) -> R?
     
     /**
      Save a root entity
