@@ -6,6 +6,7 @@ This package contains the common artefacts in Domain Driven Design written in Sw
 - Value object
 - Domain event and event handler
 - Repository
+- Specification
 
 These classes and protocols are supposed to be subclasses/implemented in concrete Swift projects.
 

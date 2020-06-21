@@ -91,3 +91,13 @@ struct Currency: ValueObject {
         return lhs.code == rhs.code
     }
 }
+
+struct UnderAgeSpecification: Specification {
+    
+    typealias T = Int
+    
+    func isSatisfied(candidate: Int) -> Bool {
+        return candidate < 18
+    }
+    
+}

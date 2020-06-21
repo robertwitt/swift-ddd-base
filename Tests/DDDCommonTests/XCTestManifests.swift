@@ -7,6 +7,7 @@ public func allTests() -> [XCTestCaseEntry] {
         testCase(DomainEventHandlerTests.allTests),
         testCase(EntityTests.allTests),
         testCase(RepositoryTests.allTests),
+        testCase(SpecificationTests.allTests),
         testCase(ValueObjectTests.allTests),
     ]
 }
